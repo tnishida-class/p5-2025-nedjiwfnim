@@ -19,5 +19,15 @@ function setup(){
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
     // BLANK[1]
+  let x = i * dx;
+    let y = height - scores[i] * 3; // スコアを縦方向に反映（倍率は調整可能）
+
+    ellipse(x, y, 5, 5); // データ点を描く
+    if(i > 0){
+      line(px, py, x, y); // 前の点と線でつなぐ
+    }
+
+    px = x;
+    py = y;
   }
 }
