@@ -22,8 +22,9 @@ function isLeapYear(y){
   return (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0);
 }
 
-function daysInYear(y){
+function daysInYear(y){return isLeapYear(y) ? 366 : 365;
   // BLANK[1] hint: 閏年なら366日、そうでなければ365日
+
 }
 
 function daysInMonth(y, m){
@@ -46,8 +47,13 @@ function dayOfYear(y, m, d){
   return count + d;
 }
 
-function dayOfWeek(y, m, d){
+function dayOfWeek(y, m, d){let days = 0;
+　for(let yy = 1970; yy < y; yy++){
+    days += daysInYear(yy);
+　days += dayOfYear(y, m, d) - 1;
+　return (4 + days) % 7;
   // BLANK[2] hint: 曜日がわかる日からの経過日数を求め7の剰余を取る　たとえば1970年1月1日木曜日
+}
 }
 
 function dayOfWeekAsString(dow){
