@@ -1,5 +1,5 @@
-const cycle = 100; // 1周期のフレーム数（定数）
-let count = 0; // 現在のフレーム数（変数）
+const cycle = 100; 
+let count = 0; 
 let size = 50;
 
 function setup() {
@@ -18,8 +18,7 @@ function draw() {
     size = 50 + count;
   }
 
-  // ★ ここを追加：色を変化させる（初心者向けの簡単な加算）
-  const c = count * 2; 
+    const c = count * 2; 
   fill(c, 100, 255 - c);
 
   ellipse(width / 2, height / 2, size, size);
